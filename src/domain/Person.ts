@@ -25,20 +25,9 @@ class Person {
     this.address = address;
   }
 
-  printPersonData = (
-    id: string,
-    name: string,
-    document: number,
-    email: string,
-    bornDate: Date,
-    civilState: string,
-    street: string,
-    complement: string,
-    cep: string,
-    city: string,
-    state: string
-  ) => {
-    `${this.id} ${this.name} ${this.document} ${this.email} ${this.bornDate} ${this.civilState} ${this.street} ${this.cep} ${this.cidade} ${this.state}`;
+  printPersonData = () => {
+    `${this.id} ${this.name} ${this.document} ${this.email} ${this.bornDate} 
+      ${this.civilState} ${this.address.street} ${this.address.cep} ${this.address.city} ${this.address.state}`;
   };
 
   getDocument = () => this.document;
@@ -70,19 +59,7 @@ const person = new Person(
   Address
 );
 
-person.printPersonData(
-  '0214',
-  'Bernardo',
-  3587994,
-  'be@bernardo.com',
-  '2018-01-19',
-  'solteiro',
-  'Rua Carlos Gomes',
-  'ap12',
-  '09715130',
-  'SBC',
-  'SP'
-);
+person.printPersonData();
 person.getDocument();
 exports.person = person;
 
