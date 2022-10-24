@@ -1,4 +1,4 @@
-class Person {
+export class Person {
   id: string;
   name: string;
   document: number;
@@ -33,7 +33,7 @@ class Person {
   getDocument = () => this.document;
 }
 
-class Address {
+export class Address {
   street: string;
   complement: string;
   cep: Number;

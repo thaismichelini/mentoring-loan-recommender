@@ -41,7 +41,8 @@ export class Loan {
         new Date(),
         new Date(),
         new Date(),
-        'open'
+        'open',
+        new Date()
       );
       this.installments.push(installment);
     }
@@ -56,6 +57,7 @@ export class Installment {
   createdAt: Date;
   upDatedAt: Date;
   status: string;
+  paidAt: Date | null;
   constructor(
     id: string,
     number: number,
@@ -63,7 +65,8 @@ export class Installment {
     dueDate: Date,
     createdAt: Date,
     upDatedAt: Date,
-    status: string
+    status: string,
+    paidAt: Date
   ) {
     this.id = id;
     this.number = number;
@@ -72,7 +75,14 @@ export class Installment {
     this.createdAt = createdAt;
     this.upDatedAt = upDatedAt;
     this.status = status;
+    this.paidAt = paidAt;
   }
+
+  paidInstallment = (): void => {
+    if (this.status !== 'paid') {
+      (this.status = 'PAID'), (this.paidAt = new Date());
+    }
+  };
 }
 const loan = new Loan(
   '0123',
