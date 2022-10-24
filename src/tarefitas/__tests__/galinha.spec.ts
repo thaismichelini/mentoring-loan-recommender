@@ -16,7 +16,7 @@ describe('Testando a Classe Galinha', () => {
   it('Vamos ver se Cacareja', () => {
     const elaFala = novaGalinha.emitirSom();
     expect(elaFala).toEqual('Cócóricóóoóó');
-  });
+  }); // falhou
   it('Vamos ver galinha não voa', () => {
     expect(novaGalinha.voa).toBe(false);
   });
